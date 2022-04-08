@@ -22,7 +22,7 @@ namespace CrudWF.Database
 
         public int Update(Product model)
         {
-
+            var entry = Entry(model);
         }
 
         public void Delete(Product model)
