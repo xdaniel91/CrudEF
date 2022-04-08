@@ -28,150 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dgv_products = new System.Windows.Forms.DataGridView();
+            this.lst_products = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lbl_id = new System.Windows.Forms.Label();
-            this.lbl_nacimento = new System.Windows.Forms.Label();
-            this.lbl_lastname = new System.Windows.Forms.Label();
-            this.lbl_firstname = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.lbl_description = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.txt_price = new System.Windows.Forms.TextBox();
+            this.txt_description = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_products
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 187);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_products.AllowUserToAddRows = false;
+            this.dgv_products.AllowUserToDeleteRows = false;
+            this.dgv_products.AllowUserToResizeRows = false;
+            this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_products.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgv_products.Location = new System.Drawing.Point(12, 179);
+            this.dgv_products.Name = "dgv_products";
+            this.dgv_products.ReadOnly = true;
+            this.dgv_products.RowHeadersVisible = false;
+            this.dgv_products.RowTemplate.Height = 25;
+            this.dgv_products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_products.Size = new System.Drawing.Size(526, 187);
+            this.dgv_products.TabIndex = 0;
             // 
-            // listBox1
+            // lst_products
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(12, 372);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(526, 184);
-            this.listBox1.TabIndex = 1;
+            this.lst_products.FormattingEnabled = true;
+            this.lst_products.ItemHeight = 15;
+            this.lst_products.Location = new System.Drawing.Point(12, 372);
+            this.lst_products.Name = "lst_products";
+            this.lst_products.Size = new System.Drawing.Size(526, 184);
+            this.lst_products.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_update);
             this.groupBox1.Controls.Add(this.btn_delete);
             this.groupBox1.Controls.Add(this.btn_save);
-            this.groupBox1.Controls.Add(this.lbl_firstname);
-            this.groupBox1.Controls.Add(this.lbl_lastname);
-            this.groupBox1.Controls.Add(this.lbl_nacimento);
-            this.groupBox1.Controls.Add(this.lbl_id);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.lbl_description);
+            this.groupBox1.Controls.Add(this.lbl_price);
+            this.groupBox1.Controls.Add(this.txt_price);
+            this.groupBox1.Controls.Add(this.txt_description);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 161);
+            this.groupBox1.Size = new System.Drawing.Size(234, 161);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(71, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(71, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(71, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(71, 118);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 3;
-            // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(6, 34);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(17, 15);
-            this.lbl_id.TabIndex = 4;
-            this.lbl_id.Text = "id";
-            // 
-            // lbl_nacimento
-            // 
-            this.lbl_nacimento.AutoSize = true;
-            this.lbl_nacimento.Location = new System.Drawing.Point(6, 121);
-            this.lbl_nacimento.Name = "lbl_nacimento";
-            this.lbl_nacimento.Size = new System.Drawing.Size(64, 15);
-            this.lbl_nacimento.TabIndex = 6;
-            this.lbl_nacimento.Text = "nacimento";
-            // 
-            // lbl_lastname
-            // 
-            this.lbl_lastname.AutoSize = true;
-            this.lbl_lastname.Location = new System.Drawing.Point(6, 97);
-            this.lbl_lastname.Name = "lbl_lastname";
-            this.lbl_lastname.Size = new System.Drawing.Size(58, 15);
-            this.lbl_lastname.TabIndex = 7;
-            this.lbl_lastname.Text = "last name";
-            // 
-            // lbl_firstname
-            // 
-            this.lbl_firstname.AutoSize = true;
-            this.lbl_firstname.Location = new System.Drawing.Point(6, 68);
-            this.lbl_firstname.Name = "lbl_firstname";
-            this.lbl_firstname.Size = new System.Drawing.Size(60, 15);
-            this.lbl_firstname.TabIndex = 8;
-            this.lbl_firstname.Text = "first name";
-            // 
-            // btn_save
-            // 
-            this.btn_save.Location = new System.Drawing.Point(177, 132);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(56, 23);
-            this.btn_save.TabIndex = 9;
-            this.btn_save.Text = "save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Location = new System.Drawing.Point(301, 132);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(56, 23);
-            this.btn_delete.TabIndex = 10;
-            this.btn_delete.Text = "delete";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(239, 132);
+            this.btn_update.Location = new System.Drawing.Point(79, 132);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(56, 23);
             this.btn_update.TabIndex = 11;
@@ -179,17 +94,80 @@
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(141, 132);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(56, 23);
+            this.btn_delete.TabIndex = 10;
+            this.btn_delete.Text = "delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(12, 132);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(56, 23);
+            this.btn_save.TabIndex = 9;
+            this.btn_save.Text = "save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // lbl_description
+            // 
+            this.lbl_description.AutoSize = true;
+            this.lbl_description.Location = new System.Drawing.Point(6, 34);
+            this.lbl_description.Name = "lbl_description";
+            this.lbl_description.Size = new System.Drawing.Size(66, 15);
+            this.lbl_description.TabIndex = 8;
+            this.lbl_description.Text = "description";
+            // 
+            // lbl_price
+            // 
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Location = new System.Drawing.Point(6, 68);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(33, 15);
+            this.lbl_price.TabIndex = 7;
+            this.lbl_price.Text = "price";
+            // 
+            // txt_price
+            // 
+            this.txt_price.Location = new System.Drawing.Point(79, 60);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.Size = new System.Drawing.Size(67, 23);
+            this.txt_price.TabIndex = 2;
+            // 
+            // txt_description
+            // 
+            this.txt_description.Location = new System.Drawing.Point(79, 31);
+            this.txt_description.Name = "txt_description";
+            this.txt_description.Size = new System.Drawing.Size(149, 23);
+            this.txt_description.TabIndex = 1;
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(482, 144);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(56, 23);
+            this.btn_search.TabIndex = 11;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 658);
+            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lst_products);
+            this.Controls.Add(this.dgv_products);
             this.Name = "ProductList";
             this.Text = "ProductList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -198,19 +176,16 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private ListBox listBox1;
+        private DataGridView dgv_products;
+        private ListBox lst_products;
         private GroupBox groupBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label lbl_firstname;
-        private Label lbl_lastname;
-        private Label lbl_nacimento;
-        private Label lbl_id;
+        private TextBox txt_price;
+        private TextBox txt_description;
+        private Label lbl_description;
+        private Label lbl_price;
         private Button btn_update;
         private Button btn_delete;
         private Button btn_save;
+        private Button btn_search;
     }
 }

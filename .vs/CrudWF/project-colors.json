@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e5ee8dd8-f3ec-4887-8cbf-132081afb96f": {
+      "ProjectGuid": "e5ee8dd8-f3ec-4887-8cbf-132081afb96f",
+      "DisplayName": "CrudWF",
+      "ColorIndex": 0
+    },
+    "3f814939-1f4a-49fd-910b-a9f5edb93eba": {
+      "ProjectGuid": "3f814939-1f4a-49fd-910b-a9f5edb93eba",
+      "DisplayName": "CodeFirst",
+      "ColorIndex": 1
+    },
+    "d7969c23-c0fb-475c-a6b5-923520d343bf": {
+      "ProjectGuid": "d7969c23-c0fb-475c-a6b5-923520d343bf",
+      "DisplayName": "ModelRelationship",
+      "ColorIndex": 2
+    },
+    "d2a904ed-e430-4224-ad5a-c1034896a19a": {
+      "ProjectGuid": "d2a904ed-e430-4224-ad5a-c1034896a19a",
+      "DisplayName": "Relationship",
+      "ColorIndex": 3
+    },
+    "ff338bad-1254-44c8-aaa6-6afd9c309752": {
+      "ProjectGuid": "ff338bad-1254-44c8-aaa6-6afd9c309752",
+      "DisplayName": "RelationshipArtesanal",
+      "ColorIndex": 4
+    },
+    "4f85de9e-3c74-4d28-b671-83304fe92992": {
+      "ProjectGuid": "4f85de9e-3c74-4d28-b671-83304fe92992",
+      "DisplayName": "UI",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 6
+}
