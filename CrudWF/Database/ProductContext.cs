@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CrudWF.Enities;
 using System.Linq.Expressions;
-using System
 
 namespace CrudWF.Database
 {
@@ -22,12 +21,14 @@ namespace CrudWF.Database
 
         public int Update(Product model)
         {
-            var entry = Entry(model);
+            this.Products.Update(model);
+            return SaveChanges();
         }
 
         public void Delete(Product model)
         {
-            throw new NotImplementedException();
+            this.Products.Remove(model);
+            SaveChanges();
         }
 
         public IEnumerable<Product> GetAll()
@@ -47,9 +48,7 @@ namespace CrudWF.Database
 
         public IEnumerable<Product> OrderBy(Expression<Func<Product, bool>> expression)
         {
-            throw new NotImplementedException();
+            return this.Products.OrderBy(expression);
         }
-
-       
     }
 }

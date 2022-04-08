@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgv_products = new System.Windows.Forms.DataGridView();
-            this.lst_products = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -58,15 +57,6 @@
             this.dgv_products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_products.Size = new System.Drawing.Size(526, 187);
             this.dgv_products.TabIndex = 0;
-            // 
-            // lst_products
-            // 
-            this.lst_products.FormattingEnabled = true;
-            this.lst_products.ItemHeight = 15;
-            this.lst_products.Location = new System.Drawing.Point(12, 372);
-            this.lst_products.Name = "lst_products";
-            this.lst_products.Size = new System.Drawing.Size(526, 184);
-            this.lst_products.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -160,10 +150,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 658);
+            this.ClientSize = new System.Drawing.Size(551, 383);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lst_products);
             this.Controls.Add(this.dgv_products);
             this.Name = "ProductList";
             this.Text = "ProductList";
@@ -177,7 +166,6 @@
         #endregion
 
         private DataGridView dgv_products;
-        private ListBox lst_products;
         private GroupBox groupBox1;
         private TextBox txt_price;
         private TextBox txt_description;

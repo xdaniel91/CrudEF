@@ -4,8 +4,8 @@
     {
 
         public int Id { get; set; }
-        public string Description { get; private set; }
-        public decimal Price { get; private set; }
+        public string Description { get;  set; }
+        public decimal Price { get;  set; }
 
         public Product(string description, decimal price)
         {

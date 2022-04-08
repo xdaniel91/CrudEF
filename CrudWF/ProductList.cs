@@ -1,5 +1,4 @@
 using CrudWF.Enities;
-using CrudWF.Database;
 using CrudWF.Services;
 
 namespace CrudWF
@@ -15,43 +14,63 @@ namespace CrudWF
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var description = txt_description.Text;
+                var price = Convert.ToDecimal(txt_price.Text);
+                ProductService.Save(description, price);
+                Refresh();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-            var rowIndex = dgv_products.CurrentCell.RowIndex;
-            var id = Convert.ToInt32(dgv_products.Rows[rowIndex].Cells["id"]);
-            var price = Convert.ToDecimal(txt_price.Text);
-            var description = dgv_products.Rows[rowIndex].Cells["description"].ToString();
-           
-            ProductService.CreateProduct(description, price);
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
             try
             {
-                using (var db = new ProductContext())
-                {
-                    dgv_products.DataSource = db.Products.ToList();
-                }
+                var rowIndex = dgv_products.CurrentCell.RowIndex;
+                var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
+
+                var description = txt_description.Text;
+                var price = Convert.ToDecimal(txt_price.Text);
+
+                ProductService.Update(product, description, price);
+                Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var rowIndex = dgv_products.CurrentCell.RowIndex;
+                var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
+                ProductService.Delete(product);
+                Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            dgv_products.DataSource = ProductService.GetAll();
+        }
+
+        void Refresh()
+        {
+            dgv_products.DataSource = ProductService.GetAll();
         }
     }
 }
