@@ -19,7 +19,7 @@ namespace CrudWF
                 var description = txt_description.Text;
                 var price = Convert.ToDecimal(txt_price.Text);
                 ProductService.Save(description, price);
-                Refresh();
+                RefreshScreen();
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace CrudWF
                 var price = Convert.ToDecimal(txt_price.Text);
 
                 ProductService.Update(product, description, price);
-                Refresh();
+                RefreshScreen();
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace CrudWF
                 var rowIndex = dgv_products.CurrentCell.RowIndex;
                 var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
                 ProductService.Delete(product);
-                Refresh();
+                RefreshScreen();
             }
             catch (Exception ex)
             {
@@ -65,12 +65,23 @@ namespace CrudWF
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            dgv_products.DataSource = ProductService.GetAll();
+            RefreshScreen();
         }
 
-        void Refresh()
+        void RefreshScreen()
         {
-            dgv_products.DataSource = ProductService.GetAll();
+            var otherThread = new Thread(() =>
+            {
+                var data_source = ProductService.GetAll();
+
+                this.Invoke((Action)delegate
+                {
+                    dgv_products.DataSource= data_source;
+                });
+            } );
+            otherThread.Start();
         }
     }
+
+
 }
