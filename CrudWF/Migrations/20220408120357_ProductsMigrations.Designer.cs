@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CrudWF.Migrations
 {
-    [DbContext(typeof(ProductContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20220408120357_ProductsMigrations")]
     partial class ProductsMigrations
     {

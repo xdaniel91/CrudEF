@@ -15,7 +15,6 @@ C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-window
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\ref\CrudWF.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.pdb
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.genruntimeconfig.cache
-C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.ProductList.resources
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
@@ -30,6 +29,7 @@ C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-window
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.csproj.AssemblyReference.cache
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Humanizer.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.frm_Main.resources
+C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.csproj.AssemblyReference.cache
