@@ -10,11 +10,11 @@ namespace CrudWF.Services
         static UnityOfWork _uow = new UnityOfWork(_context);
         static ProductRepository repository = new ProductRepository(_context);
 
-        static public void Save(string description, decimal price)
+        static public void Save(string description, decimal price, int quantity)
         {
             try
             {
-                var product = new Product(description, price);
+                var product = new Product(description, price, quantity);
                 repository.Save(product);
                 _uow.Commit();
             }

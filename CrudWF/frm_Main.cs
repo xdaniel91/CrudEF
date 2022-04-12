@@ -20,7 +20,8 @@ namespace CrudWF
                 {
                     var description = txt_description.Text;
                     var price = Convert.ToDecimal(txt_price.Text);
-                    ProductService.Save(description, price);
+                    var quantity = Convert.ToInt32(txt_quantity.Text);
+                    ProductService.Save(description, price, quantity);
                     RefreshScreen();
                 }
                 catch (Exception ex)
@@ -53,17 +54,25 @@ namespace CrudWF
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            if (rowIndex < 0)
             {
-                var rowIndex = dgv_products.CurrentCell.RowIndex;
-                var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
-                ProductService.Delete(product);
-                RefreshScreen();
+                MessageBox.Show("please select a product to delete");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    rowIndex = dgv_products.CurrentCell.RowIndex;
+                    var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
+                    ProductService.Delete(product);
+                    RefreshScreen();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -79,7 +88,7 @@ namespace CrudWF
                 {
                     var data_source = ProductService.GetAll();
 
-                    this.Invoke((Action)delegate
+                    Invoke((Action)delegate
                     {
                         dgv_products.DataSource = data_source;
                     });
@@ -91,8 +100,9 @@ namespace CrudWF
 
                 MessageBox.Show(ex.Message);
             }
-
         }
+
+        // crud person
 
         void RefreshScreen2()
         {
@@ -102,7 +112,7 @@ namespace CrudWF
                 {
                     var data_source = PersonService.GetAll();
 
-                    this.Invoke((Action)delegate
+                    Invoke(delegate
                     {
                         dgv_persons.DataSource = data_source;
                     });
@@ -114,7 +124,6 @@ namespace CrudWF
 
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btn_saveperson_Click(object sender, EventArgs e)
@@ -127,7 +136,8 @@ namespace CrudWF
                     var firstName = txt_firstname.Text;
                     var lastName = txt_lastname.Text;
                     var cpf = txt_cpf.Text;
-                    PersonService.Save(firstName, lastName, cpf);
+                    var date = datepicket_birthdate.Value;
+                    PersonService.Save(firstName, lastName, cpf, date);
                     RefreshScreen2();
                 }
                 catch (Exception ex)
@@ -153,25 +163,31 @@ namespace CrudWF
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-           
+            }   
         }
 
         private void btn_deleteperson_Click(object sender, EventArgs e)
         {
-            try
+            if (rowIndex < 0)
             {
-                var rowIndex = dgv_persons.CurrentCell.RowIndex;
-                var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
-                PersonService.Delete(person);
-                RefreshScreen2();
-
+                MessageBox.Show("please select a person to delete");
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    rowIndex = dgv_persons.CurrentCell.RowIndex;
+                    var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
+                    PersonService.Delete(person);
+                    RefreshScreen2();
 
-                MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+           
         }
 
         private void btn_searchperson_Click(object sender, EventArgs e)
@@ -201,12 +217,11 @@ namespace CrudWF
         {
             try
             {
-                rowIndex = dgv_products.CurrentCell.RowIndex;
+                rowIndex = dgv_products.CurrentRow.Index;
                 var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
 
                 txt_description.Text = product.Description;
                 txt_price.Text = product.Price.ToString();
-
             }
             catch (Exception ex)
             {

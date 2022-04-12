@@ -11,12 +11,12 @@ namespace CrudWF.Services
         static UnityOfWork _uow = new UnityOfWork(_context);
         static PersonRepository repository = new PersonRepository(_context);
 
-        public static void Save(string firstname, string lastname, string cpf)
+        public static void Save(string firstname, string lastname, string cpf, DateTime date)
         {
             try
             {
 
-                var person = new Person(firstname, lastname, cpf);
+                var person = new Person(firstname, lastname, cpf, date);
                 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
                 repository.Save(person);
                 _uow.Commit();

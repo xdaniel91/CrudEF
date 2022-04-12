@@ -28,8 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_products = new System.Windows.Forms.DataGridView();
+            this.IdProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.group_dados = new System.Windows.Forms.GroupBox();
+            this.lbl_quantity = new System.Windows.Forms.Label();
+            this.txt_quantity = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.lbl_description = new System.Windows.Forms.Label();
@@ -39,6 +49,8 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_searchperson = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_birthdate = new System.Windows.Forms.Label();
+            this.datepicket_birthdate = new System.Windows.Forms.DateTimePicker();
             this.txt_cpf = new System.Windows.Forms.MaskedTextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.btn_deleteperson = new System.Windows.Forms.Button();
@@ -48,6 +60,12 @@
             this.txt_lastname = new System.Windows.Forms.TextBox();
             this.txt_firstname = new System.Windows.Forms.TextBox();
             this.dgv_persons = new System.Windows.Forms.DataGridView();
+            this.lbl_productregister = new System.Windows.Forms.Label();
+            this.lbl_personregister = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.group_dados.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -59,35 +77,102 @@
             this.dgv_products.AllowUserToAddRows = false;
             this.dgv_products.AllowUserToDeleteRows = false;
             this.dgv_products.AllowUserToResizeRows = false;
+            this.dgv_products.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_products.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_products.Location = new System.Drawing.Point(12, 184);
+            this.dgv_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProduct,
+            this.Description,
+            this.Price,
+            this.Quantity});
+            this.dgv_products.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgv_products.Location = new System.Drawing.Point(12, 248);
+            this.dgv_products.MultiSelect = false;
             this.dgv_products.Name = "dgv_products";
             this.dgv_products.ReadOnly = true;
             this.dgv_products.RowHeadersVisible = false;
             this.dgv_products.RowTemplate.Height = 25;
             this.dgv_products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_products.Size = new System.Drawing.Size(526, 429);
+            this.dgv_products.Size = new System.Drawing.Size(505, 429);
             this.dgv_products.TabIndex = 0;
             this.dgv_products.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_products_CellDoubleClick);
             // 
+            // IdProduct
+            // 
+            this.IdProduct.DataPropertyName = "Id";
+            this.IdProduct.HeaderText = "Id";
+            this.IdProduct.Name = "IdProduct";
+            this.IdProduct.ReadOnly = true;
+            this.IdProduct.Width = 90;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 200;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Price.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 110;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "AvaliableQuantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
             // group_dados
             // 
+            this.group_dados.Controls.Add(this.lbl_quantity);
+            this.group_dados.Controls.Add(this.txt_quantity);
             this.group_dados.Controls.Add(this.btn_delete);
             this.group_dados.Controls.Add(this.btn_save);
             this.group_dados.Controls.Add(this.lbl_description);
             this.group_dados.Controls.Add(this.lbl_price);
             this.group_dados.Controls.Add(this.txt_price);
             this.group_dados.Controls.Add(this.txt_description);
-            this.group_dados.Location = new System.Drawing.Point(12, 17);
+            this.group_dados.Location = new System.Drawing.Point(12, 81);
             this.group_dados.Name = "group_dados";
-            this.group_dados.Size = new System.Drawing.Size(323, 161);
+            this.group_dados.Size = new System.Drawing.Size(305, 161);
             this.group_dados.TabIndex = 2;
             this.group_dados.TabStop = false;
             // 
+            // lbl_quantity
+            // 
+            this.lbl_quantity.AutoSize = true;
+            this.lbl_quantity.Location = new System.Drawing.Point(6, 97);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(51, 15);
+            this.lbl_quantity.TabIndex = 12;
+            this.lbl_quantity.Text = "quantity";
+            // 
+            // txt_quantity
+            // 
+            this.txt_quantity.Location = new System.Drawing.Point(79, 89);
+            this.txt_quantity.Name = "txt_quantity";
+            this.txt_quantity.Size = new System.Drawing.Size(67, 23);
+            this.txt_quantity.TabIndex = 11;
+            // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(247, 132);
+            this.btn_delete.Location = new System.Drawing.Point(243, 132);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(56, 23);
             this.btn_delete.TabIndex = 10;
@@ -97,7 +182,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(149, 132);
+            this.btn_save.Location = new System.Drawing.Point(181, 132);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(56, 23);
             this.btn_save.TabIndex = 9;
@@ -139,7 +224,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(444, 155);
+            this.btn_search.Location = new System.Drawing.Point(323, 219);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(94, 23);
             this.btn_search.TabIndex = 11;
@@ -149,7 +234,7 @@
             // 
             // btn_searchperson
             // 
-            this.btn_searchperson.Location = new System.Drawing.Point(1116, 155);
+            this.btn_searchperson.Location = new System.Drawing.Point(1152, 219);
             this.btn_searchperson.Name = "btn_searchperson";
             this.btn_searchperson.Size = new System.Drawing.Size(84, 23);
             this.btn_searchperson.TabIndex = 14;
@@ -159,6 +244,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_birthdate);
+            this.groupBox1.Controls.Add(this.datepicket_birthdate);
             this.groupBox1.Controls.Add(this.txt_cpf);
             this.groupBox1.Controls.Add(this.lbl_cpf);
             this.groupBox1.Controls.Add(this.btn_deleteperson);
@@ -167,15 +254,32 @@
             this.groupBox1.Controls.Add(this.lbl_lastname);
             this.groupBox1.Controls.Add(this.txt_lastname);
             this.groupBox1.Controls.Add(this.txt_firstname);
-            this.groupBox1.Location = new System.Drawing.Point(592, 17);
+            this.groupBox1.Location = new System.Drawing.Point(590, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 161);
+            this.groupBox1.Size = new System.Drawing.Size(455, 161);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // lbl_birthdate
+            // 
+            this.lbl_birthdate.AutoSize = true;
+            this.lbl_birthdate.Location = new System.Drawing.Point(8, 136);
+            this.lbl_birthdate.Name = "lbl_birthdate";
+            this.lbl_birthdate.Size = new System.Drawing.Size(58, 15);
+            this.lbl_birthdate.TabIndex = 19;
+            this.lbl_birthdate.Text = "Birth date";
+            // 
+            // datepicket_birthdate
+            // 
+            this.datepicket_birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datepicket_birthdate.Location = new System.Drawing.Point(109, 130);
+            this.datepicket_birthdate.Name = "datepicket_birthdate";
+            this.datepicket_birthdate.Size = new System.Drawing.Size(98, 23);
+            this.datepicket_birthdate.TabIndex = 18;
+            // 
             // txt_cpf
             // 
-            this.txt_cpf.Location = new System.Drawing.Point(79, 107);
+            this.txt_cpf.Location = new System.Drawing.Point(109, 89);
             this.txt_cpf.Mask = "00000000000";
             this.txt_cpf.Name = "txt_cpf";
             this.txt_cpf.Size = new System.Drawing.Size(77, 23);
@@ -184,7 +288,7 @@
             // lbl_cpf
             // 
             this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(6, 110);
+            this.lbl_cpf.Location = new System.Drawing.Point(8, 97);
             this.lbl_cpf.Name = "lbl_cpf";
             this.lbl_cpf.Size = new System.Drawing.Size(24, 15);
             this.lbl_cpf.TabIndex = 15;
@@ -192,7 +296,7 @@
             // 
             // btn_deleteperson
             // 
-            this.btn_deleteperson.Location = new System.Drawing.Point(291, 132);
+            this.btn_deleteperson.Location = new System.Drawing.Point(393, 132);
             this.btn_deleteperson.Name = "btn_deleteperson";
             this.btn_deleteperson.Size = new System.Drawing.Size(56, 23);
             this.btn_deleteperson.TabIndex = 10;
@@ -202,7 +306,7 @@
             // 
             // btn_saveperson
             // 
-            this.btn_saveperson.Location = new System.Drawing.Point(203, 132);
+            this.btn_saveperson.Location = new System.Drawing.Point(331, 132);
             this.btn_saveperson.Name = "btn_saveperson";
             this.btn_saveperson.Size = new System.Drawing.Size(56, 23);
             this.btn_saveperson.TabIndex = 9;
@@ -213,7 +317,7 @@
             // lbl_firstname
             // 
             this.lbl_firstname.AutoSize = true;
-            this.lbl_firstname.Location = new System.Drawing.Point(6, 39);
+            this.lbl_firstname.Location = new System.Drawing.Point(8, 22);
             this.lbl_firstname.Name = "lbl_firstname";
             this.lbl_firstname.Size = new System.Drawing.Size(60, 15);
             this.lbl_firstname.TabIndex = 8;
@@ -222,7 +326,7 @@
             // lbl_lastname
             // 
             this.lbl_lastname.AutoSize = true;
-            this.lbl_lastname.Location = new System.Drawing.Point(8, 81);
+            this.lbl_lastname.Location = new System.Drawing.Point(8, 60);
             this.lbl_lastname.Name = "lbl_lastname";
             this.lbl_lastname.Size = new System.Drawing.Size(58, 15);
             this.lbl_lastname.TabIndex = 7;
@@ -230,14 +334,14 @@
             // 
             // txt_lastname
             // 
-            this.txt_lastname.Location = new System.Drawing.Point(81, 73);
+            this.txt_lastname.Location = new System.Drawing.Point(109, 57);
             this.txt_lastname.Name = "txt_lastname";
             this.txt_lastname.Size = new System.Drawing.Size(67, 23);
             this.txt_lastname.TabIndex = 2;
             // 
             // txt_firstname
             // 
-            this.txt_firstname.Location = new System.Drawing.Point(79, 36);
+            this.txt_firstname.Location = new System.Drawing.Point(109, 19);
             this.txt_firstname.Name = "txt_firstname";
             this.txt_firstname.Size = new System.Drawing.Size(149, 23);
             this.txt_firstname.TabIndex = 1;
@@ -247,24 +351,99 @@
             this.dgv_persons.AllowUserToAddRows = false;
             this.dgv_persons.AllowUserToDeleteRows = false;
             this.dgv_persons.AllowUserToResizeRows = false;
+            this.dgv_persons.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_persons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_persons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_persons.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_persons.Location = new System.Drawing.Point(592, 184);
+            this.dgv_persons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nome,
+            this.Cpf,
+            this.Birthdate});
+            this.dgv_persons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgv_persons.Location = new System.Drawing.Point(590, 248);
+            this.dgv_persons.MultiSelect = false;
             this.dgv_persons.Name = "dgv_persons";
             this.dgv_persons.ReadOnly = true;
             this.dgv_persons.RowHeadersVisible = false;
             this.dgv_persons.RowTemplate.Height = 25;
             this.dgv_persons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_persons.Size = new System.Drawing.Size(608, 429);
+            this.dgv_persons.Size = new System.Drawing.Size(646, 429);
             this.dgv_persons.TabIndex = 12;
             this.dgv_persons.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_persons_CellDoubleClick);
+            // 
+            // lbl_productregister
+            // 
+            this.lbl_productregister.AutoSize = true;
+            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
+            this.lbl_productregister.Name = "lbl_productregister";
+            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
+            this.lbl_productregister.TabIndex = 15;
+            this.lbl_productregister.Text = "Product register";
+            // 
+            // lbl_personregister
+            // 
+            this.lbl_personregister.AutoSize = true;
+            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
+            this.lbl_personregister.Name = "lbl_personregister";
+            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
+            this.lbl_personregister.TabIndex = 16;
+            this.lbl_personregister.Text = "Person register";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 90;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "FullName";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 250;
+            // 
+            // Cpf
+            // 
+            this.Cpf.DataPropertyName = "Cpf";
+            this.Cpf.HeaderText = "Cpf";
+            this.Cpf.Name = "Cpf";
+            this.Cpf.ReadOnly = true;
+            this.Cpf.Width = 200;
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.DataPropertyName = "BirthDate";
+            dataGridViewCellStyle12.Format = "d";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Birthdate.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Birthdate.HeaderText = "Brith date";
+            this.Birthdate.Name = "Birthdate";
+            this.Birthdate.ReadOnly = true;
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1217, 625);
+            this.ClientSize = new System.Drawing.Size(1297, 700);
+            this.Controls.Add(this.lbl_personregister);
+            this.Controls.Add(this.lbl_productregister);
             this.Controls.Add(this.btn_searchperson);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv_persons);
@@ -272,7 +451,7 @@
             this.Controls.Add(this.group_dados);
             this.Controls.Add(this.dgv_products);
             this.Name = "frm_Main";
-            this.Text = "ProductList";
+            this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
             this.group_dados.ResumeLayout(false);
             this.group_dados.PerformLayout();
@@ -280,6 +459,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_persons)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -307,5 +487,19 @@
         private MaskedTextBox txt_nascimento;
         private MaskedTextBox txt_cpf;
         private Label lbl_nascimento;
+        private Label lbl_productregister;
+        private Label lbl_personregister;
+        private Label lbl_quantity;
+        private TextBox txt_quantity;
+        private DataGridViewTextBoxColumn IdProduct;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Quantity;
+        private DateTimePicker datepicket_birthdate;
+        private Label lbl_birthdate;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Cpf;
+        private DataGridViewTextBoxColumn Birthdate;
     }
 }

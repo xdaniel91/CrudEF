@@ -16,17 +16,36 @@ namespace CrudWF.Enities
         [Required(ErrorMessage = "Cpf is required")]
         public string Cpf { get; set; }
 
-        [Required(ErrorMessage = "Birthdate is required")]   
+        [Required(ErrorMessage = "Birthdate is required")]
+        public DateTime BirthDate { get; set; }
 
         public string FullName => $"{FirstName} {LastName}";
 
-        public Person(string firstname, string lastname, string cpf)
+        public int Age
         {
-            if (!ValidateCpf(cpf)) throw new Exception("Cpf inválido");      
+            get
+            {
+                var actualDate = DateTime.Now;
+                var age = actualDate.Year - BirthDate.Year;
+
+                if (actualDate.Month < BirthDate.Month)
+                {
+                    age--;
+                }
+
+                return age;
+            }
+        }
+
+        public Person(string firstname, string lastname, string cpf, DateTime birth)
+        {
+            if (!ValidateCpf(cpf)) throw new Exception("Cpf inválido");
+            if (DateTime.Now.Year - birth.Year > 110 || DateTime.Now.Year - birth.Year < 18) throw new Exception("Idade deve ser maior que 18 e menor que 110.");
 
             FirstName = firstname;
             LastName = lastname;
             Cpf = cpf;
+            BirthDate = birth;
             ValidateClass();
         }
         protected Person()
@@ -88,7 +107,5 @@ namespace CrudWF.Enities
             return cpf.EndsWith(digito);
         }
     }
-
-
 }
 
