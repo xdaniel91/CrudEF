@@ -11,14 +11,16 @@ namespace CrudWF.Services
         {
             _dataContext = context;
         }
-        public void Commit()
+
+        public bool Commit()
         {
-            _dataContext.SaveChanges();
+            var sucess = _dataContext.SaveChanges() > 1;
+            return sucess;
         }
 
         public void Rollback()
         {
-           
+
         }
     }
 }

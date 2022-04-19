@@ -1,4 +1,5 @@
 using CrudWF.Enities;
+using CrudWF.Interface;
 using CrudWF.Services;
 
 namespace CrudWF
@@ -6,9 +7,15 @@ namespace CrudWF
     public partial class frm_Main : Form
     {
         int rowIndex = -1;
+        private readonly IUnityOfWork _unityOfWork;
+        private readonly IPersonService _personService;
+        private readonly IPersonRepository _personRepository;
 
-        public frm_Main()
+        public frm_Main(IUnityOfWork unitofwork, IPersonService personService, IPersonRepository personRepository)
         {
+            _unityOfWork = unitofwork;
+            _personService = personService;
+            _personRepository = personRepository;   
             InitializeComponent();
         }
 
@@ -106,24 +113,24 @@ namespace CrudWF
 
         void RefreshScreen2()
         {
-            try
-            {
-                var otherThread = new Thread(() =>
-                {
-                    var data_source = PersonService.GetAll();
+            //try
+            //{
+            //    var otherThread = new Thread(() =>
+            //    {
+            //        var data_source = PersonService.GetAll();
 
-                    Invoke(delegate
-                    {
-                        dgv_persons.DataSource = data_source;
-                    });
-                });
-                otherThread.Start();
-            }
-            catch (Exception ex)
-            {
+            //        Invoke(delegate
+            //        {
+            //            dgv_persons.DataSource = data_source;
+            //        });
+            //    });
+            //    otherThread.Start();
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btn_saveperson_Click(object sender, EventArgs e)
@@ -137,7 +144,7 @@ namespace CrudWF
                     var lastName = txt_lastname.Text;
                     var cpf = txt_cpf.Text;
                     var date = datepicket_birthdate.Value;
-                    PersonService.Save(firstName, lastName, cpf, date);
+                    
                     RefreshScreen2();
                 }
                 catch (Exception ex)
@@ -156,7 +163,7 @@ namespace CrudWF
                     var lastName = txt_lastname.Text;
                     var cpf = txt_cpf.Text;
 
-                    PersonService.Update(person, firstName, lastName, cpf);
+                    _personService.Update(person, firstName, lastName, cpf);
                     RefreshScreen2();
                 }
                 catch (Exception ex)
@@ -178,7 +185,7 @@ namespace CrudWF
                 {
                     rowIndex = dgv_persons.CurrentCell.RowIndex;
                     var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
-                    PersonService.Delete(person);
+                    _personService.Delete(person);
                     RefreshScreen2();
 
                 }

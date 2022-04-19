@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_products = new System.Windows.Forms.DataGridView();
             this.IdProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,12 +60,12 @@
             this.txt_lastname = new System.Windows.Forms.TextBox();
             this.txt_firstname = new System.Windows.Forms.TextBox();
             this.dgv_persons = new System.Windows.Forms.DataGridView();
-            this.lbl_productregister = new System.Windows.Forms.Label();
-            this.lbl_personregister = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_productregister = new System.Windows.Forms.Label();
+            this.lbl_personregister = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.group_dados.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,14 +78,14 @@
             this.dgv_products.AllowUserToDeleteRows = false;
             this.dgv_products.AllowUserToResizeRows = false;
             this.dgv_products.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProduct,
@@ -123,9 +123,9 @@
             // Price
             // 
             this.Price.DataPropertyName = "Price";
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Price.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Price.DefaultCellStyle = dataGridViewCellStyle2;
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
@@ -352,14 +352,14 @@
             this.dgv_persons.AllowUserToDeleteRows = false;
             this.dgv_persons.AllowUserToResizeRows = false;
             this.dgv_persons.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_persons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_persons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_persons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_persons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -377,30 +377,6 @@
             this.dgv_persons.Size = new System.Drawing.Size(646, 429);
             this.dgv_persons.TabIndex = 12;
             this.dgv_persons.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_persons_CellDoubleClick);
-            // 
-            // lbl_productregister
-            // 
-            this.lbl_productregister.AutoSize = true;
-            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
-            this.lbl_productregister.Name = "lbl_productregister";
-            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
-            this.lbl_productregister.TabIndex = 15;
-            this.lbl_productregister.Text = "Product register";
-            // 
-            // lbl_personregister
-            // 
-            this.lbl_personregister.AutoSize = true;
-            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
-            this.lbl_personregister.Name = "lbl_personregister";
-            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
-            this.lbl_personregister.TabIndex = 16;
-            this.lbl_personregister.Text = "Person register";
             // 
             // Id
             // 
@@ -429,19 +405,43 @@
             // Birthdate
             // 
             this.Birthdate.DataPropertyName = "BirthDate";
-            dataGridViewCellStyle12.Format = "d";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Birthdate.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Birthdate.DefaultCellStyle = dataGridViewCellStyle4;
             this.Birthdate.HeaderText = "Brith date";
             this.Birthdate.Name = "Birthdate";
             this.Birthdate.ReadOnly = true;
+            // 
+            // lbl_productregister
+            // 
+            this.lbl_productregister.AutoSize = true;
+            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
+            this.lbl_productregister.Name = "lbl_productregister";
+            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
+            this.lbl_productregister.TabIndex = 15;
+            this.lbl_productregister.Text = "Product register";
+            // 
+            // lbl_personregister
+            // 
+            this.lbl_personregister.AutoSize = true;
+            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
+            this.lbl_personregister.Name = "lbl_personregister";
+            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
+            this.lbl_personregister.TabIndex = 16;
+            this.lbl_personregister.Text = "Person register";
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1297, 700);
+            this.ClientSize = new System.Drawing.Size(1248, 700);
             this.Controls.Add(this.lbl_personregister);
             this.Controls.Add(this.lbl_productregister);
             this.Controls.Add(this.btn_searchperson);
