@@ -10,9 +10,9 @@ namespace CrudWF.Repositories
 
 
         private readonly DataContext _dataContext;
-        private  DbSet<Product> _DbSet;
-      
-       
+        private DbSet<Product> _DbSet;
+
+
         public ProductRepository(DataContext context)
         {
             _dataContext = context;
@@ -22,7 +22,7 @@ namespace CrudWF.Repositories
         public void Delete(Product product)
         {
             _DbSet.Remove(product);
-           
+
         }
 
         public IEnumerable<Product> GetAll()
@@ -32,22 +32,19 @@ namespace CrudWF.Repositories
 
         public void GetById(long id)
         {
-           
+
         }
 
         public void Save(Product product)
-        
+
         {
-                _DbSet.Add(product);
-            var state = _dataContext.Entry(product).State;
-            Console.WriteLine("state");
-           
+            _DbSet.Add(product);
         }
 
         public void Update(Product product)
         {
-           _DbSet.Update(product);
-          
+            _DbSet.Update(product);
+
         }
     }
 }

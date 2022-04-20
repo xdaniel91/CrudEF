@@ -60,12 +60,14 @@
             this.txt_lastname = new System.Windows.Forms.TextBox();
             this.txt_firstname = new System.Windows.Forms.TextBox();
             this.dgv_persons = new System.Windows.Forms.DataGridView();
+            this.lbl_productregister = new System.Windows.Forms.Label();
+            this.lbl_personregister = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_productregister = new System.Windows.Forms.Label();
-            this.lbl_personregister = new System.Windows.Forms.Label();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.group_dados.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -365,7 +367,9 @@
             this.Id,
             this.Nome,
             this.Cpf,
-            this.Birthdate});
+            this.Birthdate,
+            this.FirstName,
+            this.LastName});
             this.dgv_persons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgv_persons.Location = new System.Drawing.Point(590, 248);
             this.dgv_persons.MultiSelect = false;
@@ -377,6 +381,30 @@
             this.dgv_persons.Size = new System.Drawing.Size(646, 429);
             this.dgv_persons.TabIndex = 12;
             this.dgv_persons.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_persons_CellDoubleClick);
+            // 
+            // lbl_productregister
+            // 
+            this.lbl_productregister.AutoSize = true;
+            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
+            this.lbl_productregister.Name = "lbl_productregister";
+            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
+            this.lbl_productregister.TabIndex = 15;
+            this.lbl_productregister.Text = "Product register";
+            // 
+            // lbl_personregister
+            // 
+            this.lbl_personregister.AutoSize = true;
+            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
+            this.lbl_personregister.Name = "lbl_personregister";
+            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
+            this.lbl_personregister.TabIndex = 16;
+            this.lbl_personregister.Text = "Person register";
             // 
             // Id
             // 
@@ -412,29 +440,21 @@
             this.Birthdate.Name = "Birthdate";
             this.Birthdate.ReadOnly = true;
             // 
-            // lbl_productregister
+            // FirstName
             // 
-            this.lbl_productregister.AutoSize = true;
-            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
-            this.lbl_productregister.Name = "lbl_productregister";
-            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
-            this.lbl_productregister.TabIndex = 15;
-            this.lbl_productregister.Text = "Product register";
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Visible = false;
             // 
-            // lbl_personregister
+            // LastName
             // 
-            this.lbl_personregister.AutoSize = true;
-            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
-            this.lbl_personregister.Name = "lbl_personregister";
-            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
-            this.lbl_personregister.TabIndex = 16;
-            this.lbl_personregister.Text = "Person register";
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Visible = false;
             // 
             // frm_Main
             // 
@@ -501,5 +521,7 @@
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Cpf;
         private DataGridViewTextBoxColumn Birthdate;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn LastName;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using CrudWF.Enities;
 using CrudWF.Interface;
+using CrudWF.ValueObjects;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrudWF.Services
 {
@@ -86,7 +88,7 @@ namespace CrudWF.Services
             _personRepository = repository;
         }
 
-        public void Add(string name, string lastname, string cpf, DateTime dateTime)
+        public void Add(string name, string lastname, Cpf cpf, DateTime dateTime)
         {
             try
             {
@@ -99,6 +101,7 @@ namespace CrudWF.Services
 
         public void Delete(Person person)
         {
+
             _personRepository.Remove(person);
         }
 
@@ -107,7 +110,7 @@ namespace CrudWF.Services
             return _personRepository.GetPeople();
         }
 
-        public void Update(Person person, string firstname, string lastname, string cpf)
+        public void Update(Person person, string firstname, string lastname, Cpf cpf)
         {
             person.FirstName = firstname;
             person.LastName = lastname;

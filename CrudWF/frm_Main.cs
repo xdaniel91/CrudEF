@@ -1,6 +1,7 @@
 using CrudWF.Enities;
 using CrudWF.Interface;
 using CrudWF.Services;
+using CrudWF.ValueObjects;
 
 namespace CrudWF
 {
@@ -55,7 +56,6 @@ namespace CrudWF
                     var quantity = Convert.ToInt32(txt_quantity.Text);
                     _productService.Update(product, description, price, quantity);
                     _unityOfWork.Commit();
-
 
                     RefreshScreen();
                 }
@@ -224,7 +224,7 @@ namespace CrudWF
                 rowIndex = dgv_persons.CurrentCell.RowIndex;
                 var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
 
-                txt_cpf.Text = person.Cpf;
+                txt_cpf.Text = person.GetCpf();
                 txt_firstname.Text = person.FirstName;
                 txt_lastname.Text = person.LastName;
 
