@@ -29,6 +29,7 @@ namespace CrudWF
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             var services = new ServiceCollection();
 

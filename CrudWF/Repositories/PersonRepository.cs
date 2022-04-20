@@ -14,29 +14,31 @@ namespace CrudWF.Repositories
         public PersonRepository(DataContext context)
         {
             _dataContext = context;
-            _DbSet = context.Set<Person>(); 
+            _DbSet = context.Set<Person>();
         }
 
         public IEnumerable<Person> GetPeople()
         {
-           return _DbSet.ToList();
+            return _DbSet.ToList();
         }
 
         public void Remove(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             _DbSet.Remove(person);
         }
 
         public void Save(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-            _DbSet.Add(person);
+            try
+            {            
+                _DbSet.Add(person);
+            }
+            catch (Exception) { throw; }
+
         }
 
         public void Update(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             _DbSet.Update(person);
         }
     }

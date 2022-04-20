@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DanielRodriguesCarva\\source\\repos\\CrudWF\\CrudWF\\CrudWF.csproj": {}
+    "C:\\Users\\xdani\\Source\\Repos\\CrudEF\\CrudWF\\CrudWF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DanielRodriguesCarva\\source\\repos\\CrudWF\\CrudWF\\CrudWF.csproj": {
+    "C:\\Users\\xdani\\Source\\Repos\\CrudEF\\CrudWF\\CrudWF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DanielRodriguesCarva\\source\\repos\\CrudWF\\CrudWF\\CrudWF.csproj",
+        "projectUniqueName": "C:\\Users\\xdani\\Source\\Repos\\CrudEF\\CrudWF\\CrudWF.csproj",
         "projectName": "CrudWF",
-        "projectPath": "C:\\Users\\DanielRodriguesCarva\\source\\repos\\CrudWF\\CrudWF\\CrudWF.csproj",
-        "packagesPath": "C:\\Users\\DanielRodriguesCarva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DanielRodriguesCarva\\source\\repos\\CrudWF\\CrudWF\\obj\\",
+        "projectPath": "C:\\Users\\xdani\\Source\\Repos\\CrudEF\\CrudWF\\CrudWF.csproj",
+        "packagesPath": "C:\\Users\\xdani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xdani\\Source\\Repos\\CrudEF\\CrudWF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DanielRodriguesCarva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\xdani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
