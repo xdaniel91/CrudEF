@@ -10,8 +10,6 @@ namespace CrudWF
         int rowIndex = -1;
         private readonly IUnityOfWork _unityOfWork;
         private readonly IPersonService _personService;
-        //private readonly IPersonRepository _personRepository;
-        //private readonly IProductRepository _productRepository;
         private readonly IProductService _productService;
 
         public frm_Main(IUnityOfWork unitofwork, IPersonService personService, IProductService productService)
@@ -19,9 +17,6 @@ namespace CrudWF
             _unityOfWork = unitofwork;
             _personService = personService;
             _productService = productService;
-
-            //_personRepository = personRepository;
-            //_productRepository = productRepository;
             
             InitializeComponent();
         }
@@ -37,6 +32,7 @@ namespace CrudWF
                     var quantity = Convert.ToInt32(txt_quantity.Text);
                     _productService.Add(description, price, quantity);
                     _unityOfWork.Commit();
+                    txt_description.Text = txt_price.Text = txt_quantity.Text = String.Empty;
    
                     RefreshScreen();
                 }
