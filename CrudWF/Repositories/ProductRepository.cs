@@ -1,26 +1,33 @@
 ﻿using CrudWF.Database;
 using CrudWF.Enities;
 using CrudWF.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudWF.Repositories
 {
     internal class ProductRepository : IProductRepository
     {
+
+
         private readonly DataContext _dataContext;
+        private  DbSet<Product> _DbSet;
+      
        
         public ProductRepository(DataContext context)
         {
             _dataContext = context;
+            _DbSet = _dataContext.Set<Product>();
         }
 
         public void Delete(Product product)
         {
-            _dataContext.Products.Remove(product);
+            _DbSet.Remove(product);
+           
         }
 
         public IEnumerable<Product> GetAll()
         {
-            return _dataContext.Products.ToList();
+            return _DbSet.ToList();
         }
 
         public void GetById(long id)
@@ -29,13 +36,18 @@ namespace CrudWF.Repositories
         }
 
         public void Save(Product product)
+        
         {
-            _dataContext.Products.Add(product);
+                _DbSet.Add(product);
+            var state = _dataContext.Entry(product).State;
+            Console.WriteLine("state");
+           
         }
 
         public void Update(Product product)
         {
-           _dataContext.Products.Update(product);
+           _DbSet.Update(product);
+          
         }
     }
 }

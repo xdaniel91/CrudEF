@@ -1,5 +1,6 @@
 ﻿using CrudWF.Database;
 using CrudWF.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudWF.Services
 {
@@ -12,15 +13,17 @@ namespace CrudWF.Services
             _dataContext = context;
         }
 
-        public bool Commit()
+        public void Commit()
         {
-            var sucess = _dataContext.SaveChanges() > 1;
-            return sucess;
+           var X = _dataContext.SaveChanges();
+            Console.WriteLine("...");
+
         }
 
         public void Rollback()
         {
-
         }
+
+
     }
 }

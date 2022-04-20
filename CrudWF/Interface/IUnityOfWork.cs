@@ -4,7 +4,7 @@ namespace CrudWF.Interface
 {
     public interface IUnityOfWork
     {
-        bool Commit();
+        void Commit();
 
         void Rollback();
     }

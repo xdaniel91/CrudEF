@@ -1,72 +1,114 @@
-﻿using CrudWF.Database;
-using CrudWF.Enities;
-using CrudWF.Repositories;
+﻿using CrudWF.Enities;
+using CrudWF.Interface;
 
 namespace CrudWF.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
-        static DataContext _context = new DataContext();
-        static UnityOfWork _uow = new UnityOfWork(_context);
-        static ProductRepository repository = new ProductRepository(_context);
+        private readonly IProductRepository _repository;
 
-        static public void Save(string description, decimal price, int quantity)
+        public ProductService(IProductRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public void Add(string description, decimal price, int quantity)
         {
             try
             {
                 var product = new Product(description, price, quantity);
-                repository.Save(product);
-                _uow.Commit();
+                _repository.Save(product);
             }
-            catch (Exception)
-            {
-                _uow.Rollback();
-                throw;
-            }
+            catch (Exception) { throw; }
         }
 
-        public static void Delete(Product product)
+        public void Delete(Product product)
         {
             try
             {
-                repository.Delete(product);
-                _uow.Commit();
-
+                _repository.Delete(product);
             }
-            catch (Exception)
-            {
-                _uow.Rollback();
-                throw;
-            }
+            catch (Exception) { throw; }
         }
 
-        public static void Update(Product product, string newDescription, decimal newPrice)
+        public IEnumerable<Product> GetProducts()
         {
             try
             {
-                product.Description = newDescription;
-                product.Price = newPrice;
-                repository.Update(product);
-                _uow.Commit();
+                return _repository.GetAll();
             }
-            catch (Exception)
-            {
-                _uow.Rollback();
-                throw;
-            }
+            catch (Exception) { throw; }
         }
 
-        public static IEnumerable<Product> GetAll()
+        public void Update(Product product, string description, decimal price, int quantity)
         {
             try
             {
-                return repository.GetAll();
+                product.Description = description;
+                product.AvaliableQuantity = quantity;
+                product.Price = price;
+                _repository.Update(product);
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            catch (Exception) { throw; }
         }
+        //     public void Save(string description, decimal price, int quantity)
+        //    {
+        //        try
+        //        {
+        //            var product = new Product(description, price, quantity);
+        //            _repository.Save(product);
+        //            _uow.Commit();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            _uow.Rollback();
+        //            throw;
+        //        }
+        //    }
+
+        //    public  void Delete(Product product)
+        //    {
+        //        try
+        //        {
+        //            _repository.Delete(product);
+        //            _uow.Commit();
+
+        //        }
+        //        catch (Exception)
+        //        {
+        //            _uow.Rollback();
+        //            throw;
+        //        }
+        //    }
+
+        //    public  void Update(Product product, string newDescription, decimal newPrice)
+        //    {
+        //        try
+        //        {
+        //            product.Description = newDescription;
+        //            product.Price = newPrice;
+        //            _repository.Update(product);
+        //            _uow.Commit();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            _uow.Rollback();
+        //            throw;
+        //        }
+        //    }
+
+        //    public  IEnumerable<Product> GetAll()
+        //    {
+        //        try
+        //        {
+        //            return _repository.GetAll();
+        //        }
+        //        catch (Exception)
+        //        {
+
+        //            throw;
+        //        }
+        //    }
+        //}
     }
 }

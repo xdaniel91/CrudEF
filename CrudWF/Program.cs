@@ -1,6 +1,8 @@
+using CrudWF.Database;
 using CrudWF.Interface;
 using CrudWF.Repositories;
 using CrudWF.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -15,32 +17,45 @@ namespace CrudWF
         [STAThread]
         static void Main()
         {
-            var builder = new HostBuilder()
-              .ConfigureServices((hostContext, services) =>
-              {
-                  services.AddSingleton<frm_Main>();
-                  services.AddLogging(configure => configure.AddConsole());
-                  services.AddScoped<IPersonRepository, PersonRepository>();
-                  services.AddScoped<IUnityOfWork, UnityOfWork>();
-                  services.AddScoped<IPersonService, PersonService>();
 
-              });
 
-            /* https://www.thecodebuzz.com/dependency-injection-net-core-windows-form-generic-hostbuilder/ */
-            var host = builder.Build();
-
-            /* // To customize application configuration such as set high DPI settings or default font,
+            /*                               inicialização padrão
+             * // To customize application configuration such as set high DPI settings or default font,
              // see https://aka.ms/applicationconfiguration.
              ApplicationConfiguration.Initialize();
-             Application.Run(new frm_Main()); */
+             Application.Run(new frm_Main()); 
+            */
+
+
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            var services = new ServiceCollection();
+
+            services.ConfigureServices();
+
+            using (ServiceProvider serviceProvider = services.BuildServiceProvider())
+            {
+                var frm = serviceProvider.GetRequiredService<frm_Main>();
+                Application.Run(frm);
+            }
         }
 
-        private static void ConfigureServices(ServiceCollection services)
+        private static void ConfigureServices(this ServiceCollection services)
         {
-            services.AddTransient<IPersonRepository, PersonRepository>();
-            services.AddTransient<IUnityOfWork, UnityOfWork>();
-            services.AddTransient<IPersonService, PersonService>();
-            services.AddSingleton<frm_Main>();
+            //database
+            services.AddScoped<IUnityOfWork, UnityOfWork>();
+            //person
+            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            //product
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<DataContext>();
+            //frm
+            services.AddScoped<frm_Main>();
+
         }
     }
 }
