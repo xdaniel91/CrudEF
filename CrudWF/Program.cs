@@ -25,7 +25,7 @@ namespace CrudWF
              Application.Run(new frm_Main()); 
             */
 
-
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -39,6 +39,7 @@ namespace CrudWF
                 var frm = serviceProvider.GetRequiredService<frm_Main>();
                 Application.Run(frm);
             }
+           
         }
 
         private static void ConfigureServices(this ServiceCollection services)
@@ -54,6 +55,7 @@ namespace CrudWF
             services.AddScoped<DataContext>();
             //frm
             services.AddScoped<frm_Main>();
+            
 
         }
     }

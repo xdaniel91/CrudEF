@@ -24,19 +24,19 @@ namespace CrudWF.Repositories
 
         public void Remove(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             _DbSet.Remove(person);
         }
 
         public void Save(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             _DbSet.Add(person);
         }
 
         public void Update(Person person)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            
             _DbSet.Update(person);
         }
 

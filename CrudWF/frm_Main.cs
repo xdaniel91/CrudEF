@@ -33,6 +33,11 @@ namespace CrudWF
                     _productService.Add(description, price, quantity);
                     _unityOfWork.Commit();
 
+
+
+                    txt_description.Text = txt_price.Text = txt_quantity.Text = String.Empty;
+   
+
                     RefreshScreen();
                 }
                 catch (Exception ex)
@@ -153,6 +158,8 @@ namespace CrudWF
                     _unityOfWork.Commit();
 
                     RefreshScreen2();
+                    txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
+                    datepicket_birthdate.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 }
                 catch (Exception ex)
                 {
@@ -174,6 +181,8 @@ namespace CrudWF
                     _unityOfWork.Commit();
 
                     RefreshScreen2();
+                    txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
+                    datepicket_birthdate.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 }
                 catch (Exception ex)
                 {
@@ -198,6 +207,9 @@ namespace CrudWF
                     _unityOfWork.Commit();
 
                     RefreshScreen2();
+                    txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
+                    datepicket_birthdate.Text = DateTime.Today.ToString("dd/MM/yyyy");
+
                 }
                 catch (Exception ex)
                 {
