@@ -54,14 +54,13 @@ namespace CrudWF.Services
             catch (Exception) { throw; }
         }
 
-        public void Update(Person person, string firstname, string lastname, Cpf cpf)
+        public void Update(Person person, string firstname, string lastname, Cpf cpf, DateTime date)
         {
             try
             {
-                person.FirstName = firstname;
-                person.LastName = lastname;
-                person.Cpf = cpf;
-                _personRepository.Update(person);
+
+                var personUpdated = person.UpdateMe(firstname, lastname, cpf, date);
+                _personRepository.Update(personUpdated);
                 _unityOfWork.Commit();
             }
             catch (Exception)

@@ -90,10 +90,20 @@
 
         public override string ToString() => _value;
 
-        public static bool ValidarCPF(Cpf sourceCPF) =>
+        /// <summary>
+        /// Retorna um booleano indicando se o Cpf é válido ou não
+        /// </summary>
+        /// <param name="sourceCPF"></param>
+        /// <returns></returns>
+        public static bool IsValid(Cpf sourceCPF) =>
     
             sourceCPF.EhValido;
-
+       
+        /// <summary>
+        /// Converte o tipo (struct)Cpf para string
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static Cpf Parse(string value)
         {
             return new Cpf(value);

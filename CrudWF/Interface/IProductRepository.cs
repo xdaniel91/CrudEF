@@ -11,5 +11,4 @@ namespace CrudWF.Interface
         Product GetById(long id);
         IEnumerable<Product> GetByDescription(string description);
     }
-
 }

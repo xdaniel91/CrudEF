@@ -31,5 +31,7 @@ C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-window
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Humanizer.dll
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.frm_Main.resources
 C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.csproj.AssemblyReference.cache
+C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.Forms.FrmMain.resources
+C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.Forms.FrmPersons.resources
+C:\Users\DanielRodriguesCarva\source\repos\CrudWF\CrudWF\obj\Debug\net6.0-windows\CrudWF.FrmProducts.resources

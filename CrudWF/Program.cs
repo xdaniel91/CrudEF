@@ -1,4 +1,5 @@
 using CrudWF.Database;
+using CrudWF.Forms;
 using CrudWF.Interface;
 using CrudWF.Repositories;
 using CrudWF.Services;
@@ -34,7 +35,7 @@ namespace CrudWF
 
             using (ServiceProvider serviceProvider = services.BuildServiceProvider())
             {
-                var frm = serviceProvider.GetRequiredService<frm_Main>();
+                var frm = serviceProvider.GetRequiredService<FrmMain>();
                 Application.Run(frm);
             }
            
@@ -52,7 +53,7 @@ namespace CrudWF
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<DataContext>();
             //frm
-            services.AddScoped<frm_Main>();
+            services.AddScoped<FrmMain>();
             
 
         }

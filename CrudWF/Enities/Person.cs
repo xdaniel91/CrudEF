@@ -57,6 +57,29 @@ namespace CrudWF.Enities
             BirthDate = birth;
             ValidateClass();
         }
+
+        public Person UpdateMe(string firstname, string lastname, Cpf cpf, DateTime birth)
+        {
+            foreach (var item in firstname)
+            {
+                if (!char.IsLetter(item)) throw new ValidationException("first name inválido");
+            }
+
+            foreach (var item in lastname)
+            {
+                if (!char.IsLetter(item)) throw new ValidationException("last name inválido");
+            }
+
+            if (!cpf.EhValido) throw new ValidationException("cpf inválido");
+            if (DateTime.Now.Year - birth.Year > 110 || DateTime.Now.Year - birth.Year < 18) throw new Exception("Idade deve ser maior que 18 e menor que 110.");
+
+            this.FirstName = firstname;
+            this.LastName = lastname;
+            this.Cpf = cpf;
+            this.BirthDate = birth;
+            ValidateClass();
+            return this;
+        }
         protected Person()
         {
             //ctor for ef
@@ -69,13 +92,13 @@ namespace CrudWF.Enities
 
         public bool ValidateClass()
         {
-            ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);
-            List<ValidationResult> results = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(this, context, results, true);
+            var context = new ValidationContext(this);
+            var results = new List<ValidationResult>();
+            var isValid = Validator.TryValidateObject(this, context, results, true);
 
-            if (isValid == false)
+            if (!isValid)
             {
-                StringBuilder sbrErrors = new StringBuilder();
+                var sbrErrors = new StringBuilder();
                 foreach (var validationResult in results)
                 {
                     sbrErrors.AppendLine(validationResult.ErrorMessage);
@@ -84,8 +107,6 @@ namespace CrudWF.Enities
             }
             return true;
         }
-
-       
     }
 }
 
