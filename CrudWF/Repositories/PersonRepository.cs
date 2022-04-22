@@ -9,38 +9,38 @@ namespace CrudWF.Repositories
     {
 
         private readonly DataContext _dataContext;
-        private readonly DbSet<Person> _DbSet;
+        private readonly DbSet<Company> _DbSet;
 
         public PersonRepository(DataContext context)
         {
             _dataContext = context;
-            _DbSet = context.Set<Person>(); 
+            _DbSet = context.Set<Company>(); 
         }
 
-        public IEnumerable<Person> GetPeople()
+        public IEnumerable<Company> GetPeople()
         {
            return _DbSet.ToList();
         }
 
-        public void Remove(Person person)
+        public void Remove(Company person)
         {
 
             _DbSet.Remove(person);
         }
 
-        public void Save(Person person)
+        public void Save(Company person)
         {
 
             _DbSet.Add(person);
         }
 
-        public void Update(Person person)
+        public void Update(Company person)
         {
             
             _DbSet.Update(person);
         }
 
-        public IEnumerable<Person> GetByName(string name)
+        public IEnumerable<Company> GetByName(string name)
         {
             var query = _DbSet.Where(p => p.FirstName.ToLower() == name).ToList();
             return query;

@@ -20,7 +20,7 @@ namespace CrudWF.Services
         {
             try
             {
-                var person = new Person(name, lastname, cpf, dateTime);
+                var person = new Company(name, lastname, cpf, dateTime);
                 _personRepository.Save(person);
                 _unityOfWork.Commit();
             }
@@ -31,7 +31,7 @@ namespace CrudWF.Services
             }
         }
 
-        public void Delete(Person person)
+        public void Delete(Company person)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace CrudWF.Services
             }
         }
 
-        public IEnumerable<Person> GetPeople()
+        public IEnumerable<Company> GetPeople()
         {
             try
             {
@@ -54,7 +54,7 @@ namespace CrudWF.Services
             catch (Exception) { throw; }
         }
 
-        public void Update(Person person, string firstname, string lastname, Cpf cpf, DateTime date)
+        public void Update(Company person, string firstname, string lastname, Cpf cpf, DateTime date)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace CrudWF.Services
             }
         }
 
-        public IEnumerable<Person> SearchByName(string name)
+        public IEnumerable<Company> SearchByName(string name)
         {
             try
             {

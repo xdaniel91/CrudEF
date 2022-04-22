@@ -4,7 +4,7 @@ using CrudWF.ValueObjects;
 
 namespace CrudWF.Enities
 {
-    public class Person
+    public class Company
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "First name is required")]
@@ -36,7 +36,7 @@ namespace CrudWF.Enities
             }
         }
 
-        public Person(string firstname, string lastname, Cpf cpf, DateTime birth)
+        public Company(string firstname, string lastname, Cpf cpf, DateTime birth)
         {
             foreach (var item in firstname)
             {
@@ -58,7 +58,7 @@ namespace CrudWF.Enities
             ValidateClass();
         }
 
-        public Person UpdateMe(string firstname, string lastname, Cpf cpf, DateTime birth)
+        public Company UpdateMe(string firstname, string lastname, Cpf cpf, DateTime birth)
         {
             foreach (var item in firstname)
             {
@@ -80,7 +80,7 @@ namespace CrudWF.Enities
             ValidateClass();
             return this;
         }
-        protected Person()
+        protected Company()
         {
             //ctor for ef
         }

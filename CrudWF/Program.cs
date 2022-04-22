@@ -51,6 +51,9 @@ namespace CrudWF
             //product
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            //company
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            //database
             services.AddScoped<DataContext>();
             //frm
             services.AddScoped<FrmMain>();

@@ -52,7 +52,7 @@ namespace CrudWF.Forms
                 try
                 {
                     var rowIndex = dgv_persons.CurrentCell.RowIndex;
-                    var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
+                    var person = dgv_persons.Rows[rowIndex].DataBoundItem as Company;
                     var firstName = txt_firstname.Text;
                     var lastName = txt_lastname.Text;
                     var cpf = txt_cpf.Text;
@@ -78,7 +78,7 @@ namespace CrudWF.Forms
                 try
                 {
                     rowIndex = dgv_persons.CurrentCell.RowIndex;
-                    var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
+                    var person = dgv_persons.Rows[rowIndex].DataBoundItem as Company;
                     _personService.Delete(person);
                     RefreshScreen();
                     txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
@@ -112,7 +112,7 @@ namespace CrudWF.Forms
             try
             {
                 rowIndex = dgv_persons.CurrentCell.RowIndex;
-                var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
+                var person = dgv_persons.Rows[rowIndex].DataBoundItem as Company;
 
                 txt_cpf.Text = person.GetCpf();
                 txt_firstname.Text = person.FirstName;
