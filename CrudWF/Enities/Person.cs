@@ -40,6 +40,16 @@ namespace CrudWF.Enities
 
         public Person(string firstname, string lastname, Cpf cpf, DateTime birth)
         {
+            foreach (var item in firstname)
+            {
+                if (!char.IsLetter(item)) throw new ValidationException("first name inválido");
+            }
+
+            foreach (var item in lastname)
+            {
+                if (!char.IsLetter(item)) throw new ValidationException("last name inválido");
+            }
+
             if (!cpf.EhValido) throw new ValidationException("cpf inválido");
             if (DateTime.Now.Year - birth.Year > 110 || DateTime.Now.Year - birth.Year < 18) throw new Exception("Idade deve ser maior que 18 e menor que 110.");
 

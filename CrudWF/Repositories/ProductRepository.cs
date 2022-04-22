@@ -46,5 +46,10 @@ namespace CrudWF.Repositories
             _DbSet.Update(product);
 
         }
+
+        public IEnumerable<Product> GetByDescription(string description)
+        {
+            return _DbSet.Where(x => x.Description.ToLower() == description).ToList();
+        }
     }
 }

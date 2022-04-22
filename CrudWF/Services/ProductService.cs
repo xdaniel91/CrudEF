@@ -51,64 +51,17 @@ namespace CrudWF.Services
             }
             catch (Exception) { throw; }
         }
-        //     public void Save(string description, decimal price, int quantity)
-        //    {
-        //        try
-        //        {
-        //            var product = new Product(description, price, quantity);
-        //            _repository.Save(product);
-        //            _uow.Commit();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            _uow.Rollback();
-        //            throw;
-        //        }
-        //    }
 
-        //    public  void Delete(Product product)
-        //    {
-        //        try
-        //        {
-        //            _repository.Delete(product);
-        //            _uow.Commit();
+        public IEnumerable<Product> SearchByDescription(string description)
+        {
+            try
+            {
+                var descriptionSafe = description.Trim().ToLower();           
+                return _repository.GetByDescription(descriptionSafe);
+             
+            }
+            catch (Exception) { throw; }
 
-        //        }
-        //        catch (Exception)
-        //        {
-        //            _uow.Rollback();
-        //            throw;
-        //        }
-        //    }
-
-        //    public  void Update(Product product, string newDescription, decimal newPrice)
-        //    {
-        //        try
-        //        {
-        //            product.Description = newDescription;
-        //            product.Price = newPrice;
-        //            _repository.Update(product);
-        //            _uow.Commit();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            _uow.Rollback();
-        //            throw;
-        //        }
-        //    }
-
-        //    public  IEnumerable<Product> GetAll()
-        //    {
-        //        try
-        //        {
-        //            return _repository.GetAll();
-        //        }
-        //        catch (Exception)
-        //        {
-
-        //            throw;
-        //        }
-        //    }
-        //}
+        }
     }
 }

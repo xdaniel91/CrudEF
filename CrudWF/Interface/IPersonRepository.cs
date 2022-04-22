@@ -8,5 +8,6 @@ namespace CrudWF.Interface
         void Remove(Person person);
         void Update(Person person);
         IEnumerable<Person> GetPeople();
+        IEnumerable<Person> GetByName(string name);
     }
 }

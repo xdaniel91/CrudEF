@@ -9,5 +9,7 @@ namespace CrudWF.Interface
         void Delete(Person person);
         void Update(Person person, string firstname, string lastname, Cpf cpf);
         IEnumerable<Person> GetPeople();
+        IEnumerable<Person> SearchByName(string name);
+
     }
 }

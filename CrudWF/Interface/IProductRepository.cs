@@ -9,6 +9,7 @@ namespace CrudWF.Interface
         void Update(Product product);
         IEnumerable<Product> GetAll();
         void GetById(long id);
+        IEnumerable<Product> GetByDescription(string description);
     }
 
 }

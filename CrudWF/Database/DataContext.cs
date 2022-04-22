@@ -27,19 +27,5 @@ namespace CrudWF.Database
                 .Property(e => e.Cpf)
                 .HasConversion(converter);
         }
-
-        //protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-        //{
-        //    configurationBuilder
-        //        .Properties<Cpf>()
-        //        .HaveConversion<CpfConverter>();
-        //}
-    }
-
-    public class CpfConverter : ValueConverter<Cpf, string>
-    {
-        public CpfConverter() : base(cpf => cpf.ToString(), cpf => new string(cpf))
-        {
-        }
     }
 }

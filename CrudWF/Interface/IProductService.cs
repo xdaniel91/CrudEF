@@ -8,5 +8,6 @@ namespace CrudWF.Interface
         void Delete(Product person);
         void Update(Product product, string description, decimal price, int quantity);
         IEnumerable<Product> GetProducts();
+        IEnumerable<Product> SearchByDescription(string description);
     }
 }

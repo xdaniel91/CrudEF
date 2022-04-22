@@ -39,6 +39,13 @@ namespace CrudWF.Repositories
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             _DbSet.Update(person);
         }
+
+        public IEnumerable<Person> GetByName(string name)
+        {
+            var query = _DbSet.Where(p => p.FirstName.ToLower() == name).ToList();
+            return query;
+        }
+        
     }
 }
 

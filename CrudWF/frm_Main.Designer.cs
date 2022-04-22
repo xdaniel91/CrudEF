@@ -60,14 +60,19 @@
             this.txt_lastname = new System.Windows.Forms.TextBox();
             this.txt_firstname = new System.Windows.Forms.TextBox();
             this.dgv_persons = new System.Windows.Forms.DataGridView();
-            this.lbl_productregister = new System.Windows.Forms.Label();
-            this.lbl_personregister = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_productregister = new System.Windows.Forms.Label();
+            this.lbl_personregister = new System.Windows.Forms.Label();
+            this.btn_searchbyname = new System.Windows.Forms.Button();
+            this.txt_searchbyname = new System.Windows.Forms.TextBox();
+            this.txt_nameproduct = new System.Windows.Forms.TextBox();
+            this.btn_searchbydescription = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.group_dados.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,7 +100,7 @@
             this.Price,
             this.Quantity});
             this.dgv_products.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgv_products.Location = new System.Drawing.Point(12, 248);
+            this.dgv_products.Location = new System.Drawing.Point(12, 268);
             this.dgv_products.MultiSelect = false;
             this.dgv_products.Name = "dgv_products";
             this.dgv_products.ReadOnly = true;
@@ -226,9 +231,9 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(323, 219);
+            this.btn_search.Location = new System.Drawing.Point(405, 219);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(94, 23);
+            this.btn_search.Size = new System.Drawing.Size(112, 23);
             this.btn_search.TabIndex = 11;
             this.btn_search.Text = "Buscar todos";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -236,9 +241,9 @@
             // 
             // btn_searchperson
             // 
-            this.btn_searchperson.Location = new System.Drawing.Point(1152, 219);
+            this.btn_searchperson.Location = new System.Drawing.Point(1124, 219);
             this.btn_searchperson.Name = "btn_searchperson";
-            this.btn_searchperson.Size = new System.Drawing.Size(84, 23);
+            this.btn_searchperson.Size = new System.Drawing.Size(112, 23);
             this.btn_searchperson.TabIndex = 14;
             this.btn_searchperson.Text = "Buscar todos";
             this.btn_searchperson.UseVisualStyleBackColor = true;
@@ -338,7 +343,7 @@
             // 
             this.txt_lastname.Location = new System.Drawing.Point(109, 57);
             this.txt_lastname.Name = "txt_lastname";
-            this.txt_lastname.Size = new System.Drawing.Size(67, 23);
+            this.txt_lastname.Size = new System.Drawing.Size(149, 23);
             this.txt_lastname.TabIndex = 2;
             // 
             // txt_firstname
@@ -365,13 +370,14 @@
             this.dgv_persons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_persons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Age,
             this.Nome,
             this.Cpf,
             this.Birthdate,
             this.FirstName,
             this.LastName});
             this.dgv_persons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgv_persons.Location = new System.Drawing.Point(590, 248);
+            this.dgv_persons.Location = new System.Drawing.Point(590, 268);
             this.dgv_persons.MultiSelect = false;
             this.dgv_persons.Name = "dgv_persons";
             this.dgv_persons.ReadOnly = true;
@@ -382,30 +388,6 @@
             this.dgv_persons.TabIndex = 12;
             this.dgv_persons.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_persons_CellDoubleClick);
             // 
-            // lbl_productregister
-            // 
-            this.lbl_productregister.AutoSize = true;
-            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
-            this.lbl_productregister.Name = "lbl_productregister";
-            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
-            this.lbl_productregister.TabIndex = 15;
-            this.lbl_productregister.Text = "Product register";
-            // 
-            // lbl_personregister
-            // 
-            this.lbl_personregister.AutoSize = true;
-            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
-            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
-            this.lbl_personregister.Name = "lbl_personregister";
-            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
-            this.lbl_personregister.TabIndex = 16;
-            this.lbl_personregister.Text = "Person register";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -413,6 +395,14 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Width = 90;
+            // 
+            // Age
+            // 
+            this.Age.DataPropertyName = "Age";
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            this.Age.Visible = false;
             // 
             // Nome
             // 
@@ -456,12 +446,74 @@
             this.LastName.ReadOnly = true;
             this.LastName.Visible = false;
             // 
+            // lbl_productregister
+            // 
+            this.lbl_productregister.AutoSize = true;
+            this.lbl_productregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_productregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_productregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_productregister.Location = new System.Drawing.Point(18, 9);
+            this.lbl_productregister.Name = "lbl_productregister";
+            this.lbl_productregister.Size = new System.Drawing.Size(220, 28);
+            this.lbl_productregister.TabIndex = 15;
+            this.lbl_productregister.Text = "Product register";
+            // 
+            // lbl_personregister
+            // 
+            this.lbl_personregister.AutoSize = true;
+            this.lbl_personregister.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lbl_personregister.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_personregister.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_personregister.Location = new System.Drawing.Point(590, 9);
+            this.lbl_personregister.Name = "lbl_personregister";
+            this.lbl_personregister.Size = new System.Drawing.Size(207, 28);
+            this.lbl_personregister.TabIndex = 16;
+            this.lbl_personregister.Text = "Person register";
+            // 
+            // btn_searchbyname
+            // 
+            this.btn_searchbyname.Location = new System.Drawing.Point(1124, 244);
+            this.btn_searchbyname.Name = "btn_searchbyname";
+            this.btn_searchbyname.Size = new System.Drawing.Size(112, 23);
+            this.btn_searchbyname.TabIndex = 17;
+            this.btn_searchbyname.Text = "Buscar por nome";
+            this.btn_searchbyname.UseVisualStyleBackColor = true;
+            this.btn_searchbyname.Click += new System.EventHandler(this.btn_searchbyname_Click);
+            // 
+            // txt_searchbyname
+            // 
+            this.txt_searchbyname.Location = new System.Drawing.Point(590, 245);
+            this.txt_searchbyname.Name = "txt_searchbyname";
+            this.txt_searchbyname.Size = new System.Drawing.Size(508, 23);
+            this.txt_searchbyname.TabIndex = 13;
+            // 
+            // txt_nameproduct
+            // 
+            this.txt_nameproduct.Location = new System.Drawing.Point(12, 245);
+            this.txt_nameproduct.Name = "txt_nameproduct";
+            this.txt_nameproduct.Size = new System.Drawing.Size(369, 23);
+            this.txt_nameproduct.TabIndex = 18;
+            // 
+            // btn_searchbydescription
+            // 
+            this.btn_searchbydescription.Location = new System.Drawing.Point(405, 245);
+            this.btn_searchbydescription.Name = "btn_searchbydescription";
+            this.btn_searchbydescription.Size = new System.Drawing.Size(112, 23);
+            this.btn_searchbydescription.TabIndex = 19;
+            this.btn_searchbydescription.Text = "Buscar por nome";
+            this.btn_searchbydescription.UseVisualStyleBackColor = true;
+            this.btn_searchbydescription.Click += new System.EventHandler(this.btn_searchbydescription_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1248, 700);
+            this.ClientSize = new System.Drawing.Size(1362, 700);
+            this.Controls.Add(this.txt_nameproduct);
+            this.Controls.Add(this.btn_searchbydescription);
+            this.Controls.Add(this.txt_searchbyname);
+            this.Controls.Add(this.btn_searchbyname);
             this.Controls.Add(this.lbl_personregister);
             this.Controls.Add(this.lbl_productregister);
             this.Controls.Add(this.btn_searchperson);
@@ -518,10 +570,15 @@
         private DateTimePicker datepicket_birthdate;
         private Label lbl_birthdate;
         private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Age;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Cpf;
         private DataGridViewTextBoxColumn Birthdate;
         private DataGridViewTextBoxColumn FirstName;
         private DataGridViewTextBoxColumn LastName;
+        private Button btn_searchbyname;
+        private TextBox txt_searchbyname;
+        private TextBox txt_nameproduct;
+        private Button btn_searchbydescription;
     }
 }

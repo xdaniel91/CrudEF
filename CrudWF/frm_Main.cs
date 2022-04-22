@@ -10,8 +10,6 @@ namespace CrudWF
         int rowIndex = -1;
         private readonly IUnityOfWork _unityOfWork;
         private readonly IPersonService _personService;
-        //private readonly IPersonRepository _personRepository;
-        //private readonly IProductRepository _productRepository;
         private readonly IProductService _productService;
 
         public frm_Main(IUnityOfWork unitofwork, IPersonService personService, IProductService productService)
@@ -20,9 +18,6 @@ namespace CrudWF
             _personService = personService;
             _productService = productService;
 
-            //_personRepository = personRepository;
-            //_productRepository = productRepository;
-            
             InitializeComponent();
         }
 
@@ -37,7 +32,7 @@ namespace CrudWF
                     var quantity = Convert.ToInt32(txt_quantity.Text);
                     _productService.Add(description, price, quantity);
                     _unityOfWork.Commit();
-   
+
                     RefreshScreen();
                 }
                 catch (Exception ex)
@@ -89,7 +84,7 @@ namespace CrudWF
                     MessageBox.Show(ex.Message);
                 }
             }
-            
+
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -184,7 +179,7 @@ namespace CrudWF
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }   
+            }
         }
 
         private void btn_deleteperson_Click(object sender, EventArgs e)
@@ -209,7 +204,7 @@ namespace CrudWF
                     MessageBox.Show(ex.Message);
                 }
             }
-           
+
         }
 
         private void btn_searchperson_Click(object sender, EventArgs e)
@@ -250,6 +245,26 @@ namespace CrudWF
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_searchbyname_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var name = txt_searchbyname.Text;
+                dgv_persons.DataSource = _personService.SearchByName(name);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_searchbydescription_Click(object sender, EventArgs e)
+        {
+            var description = txt_nameproduct.Text;
+            dgv_products.DataSource = _productService.SearchByDescription(description);
         }
     }
 }
