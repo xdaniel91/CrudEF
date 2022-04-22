@@ -2,9 +2,7 @@ using CrudWF.Database;
 using CrudWF.Interface;
 using CrudWF.Repositories;
 using CrudWF.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace CrudWF
 {

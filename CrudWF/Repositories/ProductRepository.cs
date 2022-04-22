@@ -7,11 +7,8 @@ namespace CrudWF.Repositories
 {
     internal class ProductRepository : IProductRepository
     {
-
-
         private readonly DataContext _dataContext;
         private DbSet<Product> _DbSet;
-
 
         public ProductRepository(DataContext context)
         {
@@ -21,35 +18,57 @@ namespace CrudWF.Repositories
 
         public void Delete(Product product)
         {
-            _DbSet.Remove(product);
-
+            try
+            {
+                _DbSet.Remove(product);
+            }
+            catch (Exception) { throw; }
         }
 
         public IEnumerable<Product> GetAll()
         {
-            return _DbSet.ToList();
+            try
+            {
+                return _DbSet.ToList();
+            }
+            catch (Exception) { throw; }
         }
 
-        public void GetById(long id)
+        public Product GetById(long id)
         {
-
+            try
+            {
+                return _DbSet.Find(id);
+            }
+            catch (Exception) { throw; }
         }
 
         public void Save(Product product)
-
         {
-            _DbSet.Add(product);
+            try
+            {
+                _DbSet.Add(product);
+            }
+            catch (Exception) { throw; }
         }
 
         public void Update(Product product)
         {
-            _DbSet.Update(product);
+            try
+            {
+                _DbSet.Update(product);
+            }
+            catch (Exception) { throw; }
 
         }
 
         public IEnumerable<Product> GetByDescription(string description)
         {
-            return _DbSet.Where(x => x.Description.ToLower() == description).ToList();
+            try
+            {
+                return _DbSet.Where(x => x.Description.ToLower() == description).ToList();
+            }
+            catch (Exception) { throw; }
         }
     }
 }

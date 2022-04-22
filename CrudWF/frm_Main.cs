@@ -8,13 +8,12 @@ namespace CrudWF
     public partial class frm_Main : Form
     {
         int rowIndex = -1;
-        private readonly IUnityOfWork _unityOfWork;
+
         private readonly IPersonService _personService;
         private readonly IProductService _productService;
 
-        public frm_Main(IUnityOfWork unitofwork, IPersonService personService, IProductService productService)
+        public frm_Main(IPersonService personService, IProductService productService)
         {
-            _unityOfWork = unitofwork;
             _personService = personService;
             _productService = productService;
 
@@ -31,12 +30,9 @@ namespace CrudWF
                     var price = Convert.ToDecimal(txt_price.Text);
                     var quantity = Convert.ToInt32(txt_quantity.Text);
                     _productService.Add(description, price, quantity);
-                    _unityOfWork.Commit();
-
-
 
                     txt_description.Text = txt_price.Text = txt_quantity.Text = String.Empty;
-   
+
 
                     RefreshScreen();
                 }
@@ -55,7 +51,6 @@ namespace CrudWF
                     var price = Convert.ToDecimal(txt_price.Text);
                     var quantity = Convert.ToInt32(txt_quantity.Text);
                     _productService.Update(product, description, price, quantity);
-                    _unityOfWork.Commit();
 
                     RefreshScreen();
                 }
@@ -81,7 +76,7 @@ namespace CrudWF
                     rowIndex = dgv_products.CurrentCell.RowIndex;
                     var product = dgv_products.Rows[rowIndex].DataBoundItem as Product;
                     _productService.Delete(product);
-                    _unityOfWork.Commit();
+
                     RefreshScreen();
                 }
                 catch (Exception ex)
@@ -155,7 +150,6 @@ namespace CrudWF
                     var cpf = txt_cpf.Text;
                     var date = datepicket_birthdate.Value;
                     _personService.Add(firstName, lastName, cpf, date);
-                    _unityOfWork.Commit();
 
                     RefreshScreen2();
                     txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
@@ -178,8 +172,6 @@ namespace CrudWF
                     var cpf = txt_cpf.Text;
 
                     _personService.Update(person, firstName, lastName, cpf);
-                    _unityOfWork.Commit();
-
                     RefreshScreen2();
                     txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
                     datepicket_birthdate.Text = DateTime.Today.ToString("dd/MM/yyyy");
@@ -204,8 +196,6 @@ namespace CrudWF
                     rowIndex = dgv_persons.CurrentCell.RowIndex;
                     var person = dgv_persons.Rows[rowIndex].DataBoundItem as Person;
                     _personService.Delete(person);
-                    _unityOfWork.Commit();
-
                     RefreshScreen2();
                     txt_firstname.Text = txt_lastname.Text = txt_cpf.Text = null;
                     datepicket_birthdate.Text = DateTime.Today.ToString("dd/MM/yyyy");
@@ -216,7 +206,6 @@ namespace CrudWF
                     MessageBox.Show(ex.Message);
                 }
             }
-
         }
 
         private void btn_searchperson_Click(object sender, EventArgs e)
@@ -268,7 +257,6 @@ namespace CrudWF
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

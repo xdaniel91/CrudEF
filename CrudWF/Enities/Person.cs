@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Text;
 using CrudWF.ValueObjects;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrudWF.Enities
 {
@@ -44,7 +42,7 @@ namespace CrudWF.Enities
             {
                 if (!char.IsLetter(item)) throw new ValidationException("first name inválido");
             }
-
+            
             foreach (var item in lastname)
             {
                 if (!char.IsLetter(item)) throw new ValidationException("last name inválido");
