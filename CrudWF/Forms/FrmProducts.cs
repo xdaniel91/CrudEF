@@ -109,8 +109,6 @@ namespace CrudWF
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-
-
         private void btn_searchbydescription_Click(object sender, EventArgs e)
         {
             var description = txt_nameproduct.Text;

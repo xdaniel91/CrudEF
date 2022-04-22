@@ -241,20 +241,19 @@
             this.btn_searchbydescription.UseVisualStyleBackColor = true;
             this.btn_searchbydescription.Click += new System.EventHandler(this.btn_searchbydescription_Click);
             // 
-            // frm_Main
+            // FrmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1362, 700);
             this.Controls.Add(this.txt_nameproduct);
             this.Controls.Add(this.btn_searchbydescription);
             this.Controls.Add(this.lbl_productregister);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.group_dados);
             this.Controls.Add(this.dgv_products);
-            this.Name = "frm_Main";
-            this.Text = "Main";
+            this.Name = "FrmProducts";
+            this.Size = new System.Drawing.Size(932, 700);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
             this.group_dados.ResumeLayout(false);
             this.group_dados.PerformLayout();
